@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna Eletronica</title>
+    <style>
+       *{
+        font-size: arial, sans-serif;
+       }
+    </style>
+</head>
+<body>
+    <h1>Bem vindo a Urna eletronica</h1>
+    <form>
+        <p><label for="inome">Digite o seu nome:</label></p> <input type="text" name="nome" id="nome"><br>
+        <p><label for="iIdade">Digite a sua idade: </label></p><input type="number" name="idade" id="idade"><br>
+        <input type="button" value="Verificar" onclick="calcular()">
+    </form>
+    <div id="res"></div>
+    <script>
+        function calcular(){
+            var name = document.querySelector('input#nome').value.trim();
+            var idade = document.querySelector('input#idade').value.trim(); // Removido o 'window' desnecessário
+            var res = document.getElementById('res');
+            if(idade.toLowerCase() < 16){
+                res.innerHTML = `<p>Bem vindo ${name} Sua idade é: <strong>${idade}</strong>. Você não tem idade para votar </p>`;
+            } else if(idade.toLowerCase()<18 || idade.toLowerCase()>65){
+                res.innerHTML = `<p>Bem vindo ${name} Sua idade é: <strong>${idade}</strong>. Você pode votar opcionalmente! </p>`;
+            } else if(idade.toLowerCase()>=18){
+                res.innerHTML = `<p>Bem vindo ${name} Sua idade é: <strong>${idade}</strong>. Você é obrigatorio a votar! </p>`;
+            }
+        }
+    </script>
+</body>
+</html>

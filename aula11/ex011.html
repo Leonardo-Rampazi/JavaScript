@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+    <style>
+        body{
+            font: normal 18px arial;
+        }
+        input{
+            font: normal 18pt arial;
+            width: 100px;
+        }
+        div#res{
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de escolha de país</h1>
+    <form>
+        Digite o nome do seu país: <input type="text" name="txtvel" id="txtvel">
+        <input type="button" value="Verificar" onclick="calcular()">
+    </form>
+    <div id="res"></div>
+    <script>
+        function calcular(){
+            var txtv = document.querySelector('input#txtvel').value.trim(); // Removido o 'window' desnecessário
+            var res = document.getElementById('res');
+            if(txtv.toLowerCase() === 'brasil'){
+                res.innerHTML = `<p>Seu país é: <strong>${txtv}</strong>. Você é Brasileiro.</p>`;
+            } else {
+                res.innerHTML = `<p>Seu país é: <strong>${txtv}</strong>. Você é um estrangeiro!</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

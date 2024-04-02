@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de dias da semana</title>
+</head>
+
+<body>
+    <h1>Sistema de dias da semana</h1>
+    <p>Escolha de 0 há 6 para o dia da semana</p>
+    <p>0 = domingo</p>
+    <p>1 = segunda</p>
+    <p>2 = terça</p>
+    <p>3 = quarta</p>
+    <p>4 = quinta</p>
+    <p>5 = sexta</p>
+    <p>6 = sabado</p>
+    <form>
+        Digite o seu nome: <input type="text" name="nome" id="nome">
+        Digite o dia de semana: <input type="number" name="diaSemana" id="diaSemana" min="0" max="6">
+        <input type="button" value="verificar" onclick="calcular()">
+    </form>
+    <div id="res"></div>
+    <script>
+        function calcular() {
+            var nome = document.querySelector('input#nome').value.trim();
+            var DiaSem = document.querySelector('input#diaSemana').value.trim(); 
+            var res = document.getElementById('res');
+            
+            // Convertendo DiaSem para um número inteiro
+            DiaSem = parseInt(DiaSem);
+
+            switch (DiaSem) {
+                case 0:
+                    res.innerHTML = `<p>Bem vindo ${nome} Você colocou: <strong>${DiaSem}</strong>. Tenha um Bom Domingo! </p>`;
+                    break;
+                case 1:
+                    res.innerHTML = `<p>Bem vindo ${nome} Você colocou: <strong>${DiaSem}</strong>. Tenha uma boa Segunda </p>`;
+                    break;
+                case 2:
+                    res.innerHTML = `<p>Bem vindo ${nome} Você colocou: <strong>${DiaSem}</strong>. Tenha um Boa Terça! </p>`;
+                    break;
+                case 3:
+                    res.innerHTML = `<p>Bem vindo ${nome} Você colocou: <strong>${DiaSem}</strong>. Tenha um Boa Quarta! </p>`;
+                    break;
+                case 4:
+                    res.innerHTML = `<p>Bem vindo ${nome} Você colocou: <strong>${DiaSem}</strong>. Tenha um Boa Quinta! </p>`;
+                    break;
+                case 5:
+                    res.innerHTML = `<p>Bem vindo ${nome} Você colocou: <strong>${DiaSem}</strong>. Tenha um Boa Sexta! </p>`;
+                    break;
+                case 6:
+                    res.innerHTML = `<p>Bem vindo ${nome} Você colocou: <strong>${DiaSem}</strong>. Tenha um Bom Sabado! </p>`;
+                    break;
+                default:
+                    res.innerHTML = `<p>Bem vindo ${nome} Você colocou: <strong>${DiaSem}</strong>. Não faz parte da lista de numeração! </p>`;
+            }
+        }
+    </script>
+</body>
+
+</html>

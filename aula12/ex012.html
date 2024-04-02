@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digite sua hora</title>
+</head>
+<body>
+    <h1>Bem vindo digite a hora sem os minutos</h1>
+    <form>
+        <label for="nome">Digite o seu nome:</label>
+        <input type="text" name="nome" id="nome">
+        <label for="horas">Digite qual é a hora, sem os minutos</label>
+        <input type="number" name="horas" id="horas">
+        <input type="button" value="Verificar" onclick="calcular()">
+    </form>
+    <div id="res"></div>
+    <script>
+        function calcular(){
+            var name = document.querySelector('input#nome').value.trim();
+            var horas = document.querySelector('input#horas').value.trim(); // Removido o 'window' desnecessário
+            var res = document.getElementById('res');
+            if(horas.toLowerCase() < 12){
+                res.innerHTML = `<p>Bem vindo ${name} Você colocou: <strong>${horas} horas!</strong>. Tenha um Bom dia! </p>`;
+            } else if(horas.toLowerCase()<=18){
+                res.innerHTML = `<p>Bem vindo ${name} Você colocou: <strong>${horas} horas!</strong>. Então tenha uma Boa tarde! </p>`;
+            } else if(horas.toLowerCase()>=24){
+                res.innerHTML = `<p>Bem vindo ${name} Você colocou: <strong>${horas} horas!</strong>. Tenha uma otima madrugada! </p>`;
+            }else{
+                res.innerHTML = `<p>Bem vindo ${name} Você colocou: <strong>${horas} horas!</strong>. Tenha uma otima Noite! </p>`;
+            }
+        }
+    </script>
+</body>
+</html>
