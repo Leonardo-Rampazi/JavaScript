@@ -68,4 +68,7 @@ section select option {
     background-color: #cbcfcf; /* Altere para a cor desejada */
     color:blue;
 }
+select#filista{
+width: 150px;
+}
 
