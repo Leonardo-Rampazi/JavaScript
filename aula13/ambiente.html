@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema do DoWhile</title>
+</head>
+<body>
+    <form>
+        <h1>Digite um número de 0 a 10 e ele será repetido ou não</h1>
+        <p>
+            Digite seu nome:
+            <input type="text" name="txtnome" id="txtnome">
+        </p>
+        <p>
+            Digite um número de 0 a 10:
+            <input type="number" name="digite" id="digite" min="0" max="10">
+        </p>
+        <input type="button" value="Clicar" onclick="clicou()">
+    </form>
+    <div id="res"></div>
+    <script>
+        function clicou() {
+            var nome = document.querySelector('input#txtnome').value.trim();
+            var digitar = parseInt(document.getElementById('digite').value.trim());
+            var res = document.getElementById('res');
+            res.innerHTML = ""; // Limpar conteúdo anterior
+            if (digitar >= 0 && digitar <= 10) {
+                do {
+                    res.innerHTML += `<p>Bem-vindo(a) ${nome}, aqui vão os passos ${digitar} sequencial</p>`;
+                    digitar++;
+                } while (digitar <= 10);
+            } else {
+                res.innerHTML = "<p>Por favor, digite um número válido entre 0 e 10.</p>";
+            }
+        }
+    </script>
+</body>
