@@ -1,21 +1,70 @@
-body{
+body {
     background: rgb(70, 142, 236);
     font: normal 15pt Arial;
+    margin: 0;
+    padding: 0;
 }
-header{
+
+header {
     color: white;
     text-align: center;
+    padding: 20px 0;
 }
-section{
+
+section {
     background: white;
     border-radius: 10px;
     padding: 15px;
     width: 500px;
     margin: auto;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.76);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
-footer{
-    color:white;
+
+footer {
+    color: white;
     text-align: center;
     font-style: italic;
+    padding: 20px 0;
 }
+
+/* Estilizando o formulário */
+section div {
+    margin-bottom: 15px;
+}
+
+section input[type="number"],
+section input[type="button"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+section input[type="button"] {
+    background-color: #4CAF50;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+/* Estilizando o select */
+section select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+/* Estilizando as opções do select */
+section select option {
+    padding: 10px;
+    font-size: 16px;
+}
+.input-custom {
+    background-color: #cbcfcf; /* Altere para a cor desejada */
+}
+
