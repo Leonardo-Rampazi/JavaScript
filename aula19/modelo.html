@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Exercício</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Estoques</h1>
+        <p>Faça um algoritmo para ler: quantidade atual em estoque, quantidade máxima em estoque e quantidade mínima em estoque de um produto.
+            Calcular e escrever a quantidade média (máxima + mínima)/2. Se a quantidade em estoque for maior ou igual à média, escrever a mensagem
+            "não efetuar a compra", se não, escrever "Efetuar compra".</p>
+    </header>
+    <section>
+        <div>
+        <form>
+        <p>Digite o atual estoque:
+        <input type="number" name="atualEstoque" id="atualEstoque">
+        </p>
+        <p>Digite a máxima do Estoque:
+        <input type="number" name="maximaEstoque" id="maximaEstoque">
+        </p>
+        <p>Digite a mínima do Estoque:
+        <input type="number" name="minimaEstoque" id="minimaEstoque"><br>
+        </p>
+        <input type="button" value="Enviar" onclick="contar()">
+        </form>
+        </div>
+        <div id="res">
+           Preparando a contagem...
+        </div>
+    </section>
+    <footer>
+        <p> &copy; CursoemVídeo</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

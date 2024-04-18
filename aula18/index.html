@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nave espacial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <h1>Nave espacial</h1>
+        <p>Exemplo: a nave espacial mais rápida já construída pelo homem é a Voyager 1, que alcança 278.280 km/h em 27/07/2018. O planeta Marte chegou a ficar a 570.000.000 km da Terra. 
+            Sendo assim, calcule em dias o tempo necessário para a nave chegar a Marte em JavaScript.
+        </p>
+        <p>Qual é seu nome? </p>
+        <input type="text" name="txtnome" id="txtnome">
+        <p>Digite quantos Km/h sua nave tem? </p>
+        <input type="number" name="nave" id="nave">
+        <input type="button" value="Enviar" onclick="clicou()">
+    </form>
+    <div id="res"></div>
+    <script>
+        function clicou(){
+            var nome = document.querySelector('input#txtnome').value.trim();
+            var nave = document.getElementById('nave').value.trim();
+            var res = document.getElementById('res');
+            res.innerHTML = ""; // Limpar conteúdo anterior
+            var velocidadeHora = 278280;
+            var distanciaMarte = 570000000;
+            var distanciaDia = velocidadeHora * 24;
+            var distanciaNave = nave * 24;
+            var dias = distanciaMarte / distanciaNave;
+            res.innerHTML += `<p>Bem-vindo(a) ${nome}, aqui vão os dias que sua nave chegará em Marte: ${dias.toFixed(2)}</p>`;
+        }
+    </script>
+</body>
+</html>
